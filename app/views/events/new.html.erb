@@ -1,22 +1,31 @@
-<h1>テスト</h1>
+<h1>入力フォーム</h1>
 
 <%= form_with(model: @event, local: true) do |form| %>
 
-  <div class="title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="live_name">
+    <%= form.label :ライブ名 %>
+    <%= form.text_field :live_name %>
   </div>
 
     <div class="time">
-    <%= form.label :start_time %>
+    <%= form.label :日時 %>
     <%= form.datetime_select :start_time %>
   </div>
 
-  <div class="content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <div class="place">
+    <%= form.label :開場 %>
+    <%= form.text_field :place %>
   </div>
 
+  <div class="guest">
+    <%= form.label :出演者 %>
+    <%= form.text_field :guest %>
+  </div>
+
+  <div class="price">
+    <%= form.label :値段 %>
+    <%= form.text_field :price %>
+  </div>
 
   <div class="submit">
     <%= form.submit %>
