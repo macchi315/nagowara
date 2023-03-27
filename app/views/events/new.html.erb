@@ -13,7 +13,7 @@
   </div>
 
   <div class="place">
-    <%= form.label :開場 %>
+    <%= form.label :会場 %>
     <%= form.text_field :place %>
   </div>
 
@@ -26,6 +26,19 @@
     <%= form.label :値段 %>
     <%= form.text_field :price %>
   </div>
+
+  <%# 商品画像 %>
+  <div class="img-upload">
+    <div class="weight-bold-text">
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= form.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+  <%# /商品画像 %>
 
   <div class="submit">
     <%= form.submit %>
