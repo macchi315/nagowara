@@ -4,5 +4,7 @@
 <p><%= @event.start_time %></p>
 <p><%= @event.guest %></p>
 <p><%= @event.price %></p>
-
-<%#= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+<div class="event__manage">
+  <%= link_to "編集する", edit_event_path(@event.id), class: :event__btn %>
+  <%= link_to "削除する", event_path(@event.id), method: :delete, class: :event__btn %>
+</div>
