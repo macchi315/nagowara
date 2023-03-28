@@ -5,7 +5,10 @@
 
   <% events.each do |event| %>
     <div>
+    <%= link_to event_path(event.id) do %>
       <%= event.live_name %>
+      <%= date %>
+    <% end %>
     </div>
   <% end %>
 <%# ここまで追記 %>
