@@ -1,10 +1,18 @@
+<h1>【ライブ名】<h1>
 <h1><%= @event.live_name%></h1>
 <%= image_tag @event.image.variant(resize: '300x300') if @event.image.attached?%>
+<p>【会場】</p>
 <p><%= @event.place %></p>
-<p><%= @event.start_time %></p>
+<p>【開演時間】</p>
+<p><%= @event.start_time.strftime("%H:%M") %></p>
+<p>【出演者】</p>
 <p><%= @event.guest %></p>
-<p><%= @event.price %></p>
-<div class="event__manage">
-  <%= link_to "編集する", edit_event_path(@event.id), class: :event__btn %>
-  <%= link_to "削除する", event_path(@event.id), method: :delete, class: :event__btn %>
-</div>
+<p>【料金】</p>
+<p><%= @event.price %>円</p>
+
+<% if user_signed_in? %>
+  <div class="event__manage">
+    <%= link_to "編集する", edit_event_path(@event.id), class: :event__btn %>
+    <%= link_to "削除する", event_path(@event.id), method: :delete, class: :event__btn %>
+  </div>
+<% end %>
