@@ -14,3 +14,7 @@
  *= require_self
  *= require simple_calendar
  */
+
+ * {
+  box-sizing: border-box;
+}
