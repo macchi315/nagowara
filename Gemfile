@@ -59,3 +59,7 @@ gem 'image_processing', '~> 1.2'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem 'devise'
+
+group :production do
+  gem 'pg'
+end
