@@ -1,8 +1,8 @@
 <div class="item-show">
   <div class="item-box">
-    <h2 class="name">
+    <h1 class="name">
       <%= @event.live_name %>
-    </h2>
+    </h1>
     <div class="item-img-content">
       <%= image_tag @event.image.variant(resize: '300x300') if @event.image.attached?%>
     </div>
