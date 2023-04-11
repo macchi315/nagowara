@@ -1,14 +1,34 @@
-<h1>【ライブ名】<h1>
-<h1><%= @event.live_name%></h1>
-<%= image_tag @event.image.variant(resize: '300x300') if @event.image.attached?%>
-<p>【会場】</p>
-<p><%= @event.place %></p>
-<p>【開演時間】</p>
-<p><%= @event.start_time.strftime("%H:%M") %></p>
-<p>【出演者】</p>
-<p><%= @event.guest %></p>
-<p>【料金】</p>
-<p><%= @event.price %>円</p>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @event.live_name %>
+    </h2>
+    <div class="item-img-content">
+      <%= image_tag @event.image.variant(resize: '300x300') if @event.image.attached?%>
+    </div>
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">会場</th>
+          <td class="detail-value"><%= @event.place %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">開演時間</th>
+          <td class="detail-value"><%= @event.start_time.strftime("%H:%M") %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">出演者</th>
+          <td class="detail-value"><%= @event.guest%></td>
+        </tr>
+        <tr>
+          <th class="detail-item">料金</th>
+          <td class="detail-value"><%= @event.price %>円</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <% if user_signed_in? %>
   <div class="event__manage">
